@@ -1,8 +1,9 @@
 package com.beyzanur.springbootgraphqlexp.graphql.resolver.query;
 
 import com.beyzanur.springbootgraphqlexp.dto.InstructorDto;
+import com.beyzanur.springbootgraphqlexp.model.Instructor;
 import com.beyzanur.springbootgraphqlexp.service.InstructorService;
-import com.coxautodev.graphql.tools.GraphQLQueryResolver;
+import graphql.kickstart.tools.GraphQLQueryResolver;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -14,11 +15,11 @@ public class InstructorQueryResolver implements GraphQLQueryResolver {
 
     private final InstructorService instructorService;
 
-    public InstructorDto getStudentById(Long id){
-        return instructorService.findInstructorById(id);
+    public Instructor instructorById(Long id){
+        return instructorService.instructorById(id);
     }
 
-    public List<InstructorDto> getAllInstructors(){
-        return instructorService.findAll();
+    public List<Instructor> allInstructors(){
+        return instructorService.allInstructors();
     }
 }

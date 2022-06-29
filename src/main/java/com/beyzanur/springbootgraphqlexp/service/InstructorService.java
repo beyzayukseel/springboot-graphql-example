@@ -13,20 +13,21 @@ public class InstructorService {
 
     private final InstructorRepository instructorRepository;
 
-    public Instructor findInstructorById(Long id) {
+    public Instructor instructorById(Long id) {
         return instructorRepository.findById(id).orElseThrow();
     }
 
-    public List<Instructor> findAll(){
+    public List<Instructor> allInstructors(){
         return instructorRepository.findAll();
     }
 
-    public void create(Instructor instructor){
-        instructorRepository.save(instructor);
+    public Instructor createInstructor(Instructor instructor){
+        return instructorRepository.save(instructor);
     }
 
-    public void deleteById (Long id){
+    public Instructor deleteInstructor (Long id){
         instructorRepository.deleteById(id);
+        return instructorRepository.getById(id);
     }
 }
 

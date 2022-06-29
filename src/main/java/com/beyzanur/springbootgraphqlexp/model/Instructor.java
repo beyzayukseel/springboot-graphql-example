@@ -18,6 +18,6 @@ public class Instructor  {
     private String phoneNumber;
     private InstructorType instructorType;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private Set <Course> courses;
 }

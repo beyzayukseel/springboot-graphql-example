@@ -1,6 +1,6 @@
 package com.beyzanur.springbootgraphqlexp.graphql.listener;
 
-import graphql.servlet.GraphQLServletListener;
+import graphql.kickstart.servlet.core.GraphQLServletListener;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.MDC;

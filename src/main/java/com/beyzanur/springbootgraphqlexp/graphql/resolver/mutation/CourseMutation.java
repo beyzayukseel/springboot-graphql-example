@@ -1,8 +1,9 @@
 package com.beyzanur.springbootgraphqlexp.graphql.resolver.mutation;
 
+import com.beyzanur.springbootgraphqlexp.dto.CourseDto;
 import com.beyzanur.springbootgraphqlexp.model.Course;
 import com.beyzanur.springbootgraphqlexp.service.CourseService;
-import com.coxautodev.graphql.tools.GraphQLMutationResolver;
+import graphql.kickstart.tools.GraphQLMutationResolver;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -12,11 +13,11 @@ public class CourseMutation implements GraphQLMutationResolver {
 
     private final CourseService courseService;
 
-    public Course create(CourseDto courseDto){
-        return courseService.create(courseDto);
+    public Course createCourse(Course course){
+         return courseService.createCourse(course);
     }
 
-    public void delete(Long id){
-        courseService.deleteById(id);
+    public Course deleteCourse(Long id){
+        return courseService.deleteCourse(id);
     }
 }

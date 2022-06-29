@@ -14,12 +14,12 @@ input InstructorInput {
      courses: [CourseInput!]
 }
 
-extend Type Query {
+extend type Query {
      instructorById(id: ID): Instructor
-     allInstructors:[Instructor!]
+     allInstructors:[Instructor]
 }
 
-extend Type Mutation {
-     createInstructor(input:InstructorInput):Instructor
-     deleteInstructor(input:InstructorInput):Instructor
+extend type Mutation {
+     createInstructor(input:Instructor):Instructor
+     deleteInstructor(id: ID):Instructor
 }

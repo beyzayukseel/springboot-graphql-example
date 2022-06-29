@@ -2,7 +2,7 @@ type Course {
     id: ID!
     name: String
     code: String
-    creditScore: BigDecimal
+    creditScore: Int
     instructor: Instructor
 }
 
@@ -10,16 +10,16 @@ input CourseInput {
     id: ID!
     name: String
     code: String
-    creditScore: BigDecimal
+    creditScore: Int
     instructor: InstructorInput
 }
 
-extend Type Query {
+extend type Query {
      courseById(id: ID): Course
-     allCourses:[Course!]
+     allCourses:[Course]
 }
 
-extend Type Mutation {
-     createCourse(input:CourseInput):Course
+extend type Mutation {
+     createCourse(input:Course):Course
      deleteCourse(id: ID):Course
 }

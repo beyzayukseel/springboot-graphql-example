@@ -1,5 +1,3 @@
-scalar Long
-
 type Mutation {
 
 }

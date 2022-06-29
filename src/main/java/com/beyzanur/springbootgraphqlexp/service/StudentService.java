@@ -12,19 +12,20 @@ public class StudentService {
 
     private final StudentRepository studentRepository;
 
-    public Student findStudentById(Long id) {
+    public Student studentById(Long id) {
         return studentRepository.findById(id).orElseThrow();
     }
 
-    public List<Student> findAll(){
+    public List<Student> allStudents(){
         return studentRepository.findAll();
     }
 
-    public void create(Student student){
-        studentRepository.save(student);
+    public Student createStudent(Student student){
+        return studentRepository.save(student);
     }
 
-    public void deleteById (Long id){
-        studentRepository.deleteById(id);
+    public Student deleteStudent (Long id){
+         studentRepository.deleteById(id);
+         return studentRepository.findById(id).orElseThrow();
     }
 }

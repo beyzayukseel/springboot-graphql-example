@@ -2,24 +2,24 @@ type Student {
     id: ID!
     name: String
     surname: String
-    birthDate: Date
+    birthday: String
     courses: [Course!]
 }
 
 input StudentInput {
-id: ID!
+    id: ID!
     name: String
     surname: String
-    birthDate: Date
+    birthday: String
     courses: [CourseInput!]
 }
 
-extend Type Query {
+extend type Query {
      studentById(id: ID): Student
-     allStudents:[Student!]
+     allStudents:[Student]
 }
 
-extend Type Mutation {
-     createStudent(input:StudentInput):Student
-     deleteStudent(input:StudentInput):Student
+extend type Mutation {
+     createStudent(input:Student):Student
+     deleteStudent(id: ID):Student
 }

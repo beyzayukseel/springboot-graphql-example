@@ -13,19 +13,20 @@ public class CourseService {
 
     private final CourseRepository courseRepository;
 
-    public Course findCourseById(Long id) {
+    public Course courseById(Long id) {
         return courseRepository.findById(id).orElseThrow();
     }
 
-    public List<Course> findAll(){
+    public List<Course> allCourses(){
         return courseRepository.findAll();
     }
 
-    public void create(Course course){
-        courseRepository.save(course);
+    public Course createCourse(Course course){
+        return courseRepository.save(course);
     }
 
-    public void deleteById (Long id){
+    public Course deleteCourse (Long id){
         courseRepository.deleteById(id);
+        return courseRepository.findById(id).orElseThrow();
     }
 }
