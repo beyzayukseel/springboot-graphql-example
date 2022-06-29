@@ -1,0 +1,25 @@
+type Course {
+    id: ID!
+    name: String
+    code: String
+    creditScore: BigDecimal
+    instructor: Instructor
+}
+
+input CourseInput {
+    id: ID!
+    name: String
+    code: String
+    creditScore: BigDecimal
+    instructor: InstructorInput
+}
+
+extend Type Query {
+     courseById(id: ID): Course
+     allCourses:[Course!]
+}
+
+extend Type Mutation {
+     createCourse(input:CourseInput):Course
+     deleteCourse(id: ID):Course
+}

@@ -1,0 +1,25 @@
+type Instructor {
+    id: ID!
+    name: String
+    address: String
+    phoneNumber: String
+    courses: [Course!]
+}
+
+input InstructorInput {
+     id: ID!
+     name: String
+     address: String
+     phoneNumber: String
+     courses: [CourseInput!]
+}
+
+extend Type Query {
+     instructorById(id: ID): Instructor
+     allInstructors:[Instructor!]
+}
+
+extend Type Mutation {
+     createInstructor(input:InstructorInput):Instructor
+     deleteInstructor(input:InstructorInput):Instructor
+}

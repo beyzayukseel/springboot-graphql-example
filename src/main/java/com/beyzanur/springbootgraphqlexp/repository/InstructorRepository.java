@@ -1,4 +1,7 @@
 package com.beyzanur.springbootgraphqlexp.repository;
 
-public interface InstructorRepository {
+import com.beyzanur.springbootgraphqlexp.model.Instructor;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface InstructorRepository extends JpaRepository<Instructor, Long> {
 }

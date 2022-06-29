@@ -1,0 +1,25 @@
+type Student {
+    id: ID!
+    name: String
+    surname: String
+    birthDate: Date
+    courses: [Course!]
+}
+
+input StudentInput {
+id: ID!
+    name: String
+    surname: String
+    birthDate: Date
+    courses: [CourseInput!]
+}
+
+extend Type Query {
+     studentById(id: ID): Student
+     allStudents:[Student!]
+}
+
+extend Type Mutation {
+     createStudent(input:StudentInput):Student
+     deleteStudent(input:StudentInput):Student
+}
